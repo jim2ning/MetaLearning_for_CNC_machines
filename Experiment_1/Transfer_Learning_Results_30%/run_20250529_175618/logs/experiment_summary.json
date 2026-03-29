@@ -1,0 +1,91 @@
+{
+  "timestamp": "20250529_175618",
+  "config_used": {
+    "model_architecture": {
+      "model_type": "LSTM_AE",
+      "input_dim": "auto_calculated",
+      "hidden_dim": 128,
+      "latent_dim": 64,
+      "num_layers": 2,
+      "dropout_rate": 0.2
+    },
+    "training_parameters": {
+      "learning_rate": 0.0001,
+      "epochs": 100,
+      "batch_size": 64,
+      "train_ratio": 0.8,
+      "early_stopping_patience": 20,
+      "gradient_clip_max_norm": 1.0
+    },
+    "data_preprocessing": {
+      "sequence_length": 333,
+      "production_cycle": 333,
+      "scaler_type": "MinMaxScaler",
+      "scaler_range": [
+        0,
+        1
+      ],
+      "fill_na_method": "zero",
+      "sequence_generation_method": "production_cycle"
+    },
+    "paths": {
+      "train_data": "Data/M014_normal_processed.csv",
+      "test_normal_data": "Data/M014_normal_processed.csv",
+      "test_anomaly_data": "Data/M014_faulty_processed.csv",
+      "save_dir": "saved_models",
+      "results_dir": "results"
+    },
+    "anomaly_detection": {
+      "threshold_method": "statistical",
+      "threshold_multiplier": 3,
+      "threshold_base": "mean_plus_std"
+    },
+    "visualization_settings": {
+      "figure_size": [
+        12,
+        8
+      ],
+      "dpi": 300,
+      "font_size": 12,
+      "save_format": "png"
+    }
+  },
+  "data_files": {
+    "m001_data": "Preprocessing_Data/M001_normal_processed_softdtw.csv",
+    "m014_train_data": "Preprocessing_Data/M014_normal_processed_softdtw.csv",
+    "m014_test_normal": "Preprocessing_Data/M014_normal_processed_softdtw.csv",
+    "m014_test_anomaly": "Preprocessing_Data/M014_faulty_processed_softdtw.csv"
+  },
+  "model_performance": {
+    "Metric": {
+      "0": "Accuracy",
+      "1": "Precision",
+      "2": "Recall",
+      "3": "F1-Score",
+      "4": "Support (Normal)",
+      "5": "Support (Anomaly)",
+      "6": "True Positive",
+      "7": "False Positive",
+      "8": "True Negative",
+      "9": "False Negative"
+    },
+    "Value": {
+      "0": "0.9405",
+      "1": "0.9412",
+      "2": "0.7111",
+      "3": "0.8101",
+      "4": "207",
+      "5": "45",
+      "6": "32",
+      "7": "2",
+      "8": "205",
+      "9": "13"
+    }
+  },
+  "final_threshold": 0.018739497754722834,
+  "data_statistics": {
+    "train_sequences": 1442,
+    "test_normal_sequences": 207,
+    "test_anomaly_sequences": 45
+  }
+}

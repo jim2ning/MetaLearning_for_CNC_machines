@@ -1,0 +1,11 @@
+Metric,Value
+Accuracy,0.9396
+Precision,0.0000
+Recall,0.0000
+F1-Score,0.0000
+Support (Normal),3313
+Support (Anomaly),34
+True Positive,0
+False Positive,168
+True Negative,3145
+False Negative,34
